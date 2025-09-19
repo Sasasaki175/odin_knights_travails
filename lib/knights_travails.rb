@@ -19,10 +19,13 @@ class KnightsTravails
         node_queue << next_node if movement_valid?(next_node)
       end
     end
-    
-    puts "You made it in #{path(node).length - 1} moves! Here's your path:"
+
+    print_path(node)
+
     path(node)
   end
+
+  private
 
   # returns false if the next move is out of bounds or previously done.
   def movement_valid?(next_node)
@@ -42,6 +45,11 @@ class KnightsTravails
     end
 
     path
+  end
+
+  def print_path(node)
+    puts "You made it in #{path(node).length - 1} moves! Here's your path:"
+    p path(node)
   end
 end
 
